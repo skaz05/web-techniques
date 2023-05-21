@@ -24,43 +24,66 @@
         <header>
             <h1>eCofetarie</h1>
             <nav>
-                <ul>
+                <ul class="menu">
                     <li>
                         <a href="index.html">Acasa</a>
-                        <ul>
-                            <li><a href="#Salut">Salut (H2)</a></li>
-                            <li><a href="#video1">Video 1</a></li>
-                            <li><a href="#video2">Video 2</a></li>
-                            <li><a href="#Promotii">Promotii</a></li>
-                            <li><a href="#Footer">Footer</a></li>
-                        </ul>
+                            <ul class="submenu">
+                                <li><a href="#Salut">Salut (H2)</a></li>
+                                <li><a href="#video1">Video 1</a></li>
+                                <li><a href="#video2">Video 2</a></li>
+                                <li><a href="#Promotii">Promotii</a></li>
+                                <li><a href="#Footer">Footer</a></li>
+                            </ul>
                     </li>
                     <li><a href="about.html">Despre</a></li>
                     <li><a href="images.html">Imagini</a></li>
+                    <li>
+                        <a href="index.html">Acasa</a>
+                            <ul class="submenu">
+                                <li><a href="#Salut">Salut (H2)</a></li>
+                                <li><a href="#video1">Video 1</a></li>
+                                <li><a href="#video2">Video 2</a></li>
+                                <li><a href="#Promotii">Promotii</a></li>
+                                <li><a href="#Footer">Footer</a></li>
+                            </ul>
+                    </li>
+                    <li>
+                        <a href="index.html">Acasa</a>
+                            <ul class="submenu">
+                                <li><a href="#Salut">Salut (H2)</a></li>
+                                <li><a href="#video1">Video 1</a></li>
+                                <li><a href="#video2">Video 2</a></li>
+                                <li><a href="#Promotii">Promotii</a></li>
+                                <li><a href="#Footer">Footer</a></li>
+                            </ul>
+                    </li>
                 </ul>
             </nav>
         </header>
         <br/>
         <br/>
         <br/>
-        <section id="video1">
-            <h2>Lista 1 cu video-uri relevante</h2>
-            <ul>
-                <li><a href="https://www.youtube.com/embed/WPni755-Krg" target="ifr-video">Relaxing focusing music that helped with the creation of this website and studying this course</a></li>
-                <li><a href="https://www.youtube.com/embed/UJ4e4XVQQcY" target="ifr-video">Sith Meditation Music</a></li>
-            </ul>
+        <div id="container1">
+            <section id="video1">
+                <h2>Lista 1 cu video-uri relevante</h2>
+                <ul>
+                    <li><a href="https://www.youtube.com/embed/WPni755-Krg" target="ifr-video">Relaxing focusing music that helped with the creation of this website and studying this course</a></li>
+                    <li><a href="https://www.youtube.com/embed/UJ4e4XVQQcY" target="ifr-video">Sith Meditation Music</a></li>
+                </ul>
+                <iframe name="ifr-video" width="460" height="315" src="https://www.youtube.com/embed/WPni755-Krg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <br/>
+            </section>
             <br/>
-            <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/WPni755-Krg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </section>
-        <br/>
-        <section id="video2">
-            <h2>Lista 2 cu video-uri relevante - layout diferit</h2>
-            <a href="https://www.youtube.com/embed/WPni755-Krg" target="ifr-video2">[Relaxing Focusing Music]</a>
-            <b>   |   </b>
-            <a href="https://www.youtube.com/embed/UJ4e4XVQQcY" target="ifr-video2">  [Sith Meditation Music]</a>
-            <br/>
-            <iframe name="ifr-video2" width="560" height="515" src="https://www.youtube.com/embed/UJ4e4XVQQcY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </section>
+            <section id="video2">
+                <h2>Lista 2 cu video-uri relevante - layout diferit</h2>
+                <a href="https://www.youtube.com/embed/WPni755-Krg" target="ifr-video2">[Relaxing Focusing Music]</a>
+                <b>   |   </b>
+                <a href="https://www.youtube.com/embed/UJ4e4XVQQcY" target="ifr-video2">  [Sith Meditation Music]</a>
+                <br/> <br/>
+                <iframe name="ifr-video2" width="460" height="315" src="https://www.youtube.com/embed/UJ4e4XVQQcY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <br/>
+            </section>
+        </div>
         <br/>
         <br/>
         <br/>
@@ -82,25 +105,27 @@
         <br/>
 
         <main>
-            <section id="Salut">
-                <h2>Salut (H2)</h2>
-                <p>[H2 paragraph] Bine ai venit.</p>
-                <h3>Ordered List Example:</h3>
-                <ol>
-                    <li>abc</li>
-                    <li>abc</li>
-                    <li>abc</li>
-                </ol>
-            </section>
-            <section id="Promotii">
-                <h2>Promotii</h2>
-                <p class="c1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti error consequuntur temporibus eveniet assumenda non laborum dolorum molestiae quos aspernatur nostrum sit sint, dolorem voluptas, magnam aliquam? Consequuntur, eveniet tempora.</p>
-                <ol>
-                    <li>abc</li>
-                    <li>abc</li>
-                    <li>abc</li>
-                </ol>
-            </section>
+            <div id="container2">
+                <section id="Salut">
+                    <h2>Salut (H2)</h2>
+                    <p>[H2 paragraph] Bine ai venit.</p>
+                    <h3>Ordered List Example:</h3>
+                    <ol>
+                        <li>abc</li>
+                        <li>abc</li>
+                        <li>abc</li>
+                    </ol>
+                </section>
+                <section id="Promotii">
+                    <h2>Promotii</h2>
+                    <p class="c1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti error consequuntur temporibus eveniet assumenda non laborum dolorum molestiae quos aspernatur nostrum sit sint, dolorem voluptas, magnam aliquam? Consequuntur, eveniet tempora.</p>
+                    <ol>
+                        <li>abc</li>
+                        <li>abc</li>
+                        <li>abc</li>
+                    </ol>
+                </section>
+            </div>
         </main>
         <footer>
             <section id="Footer">

@@ -1,21 +1,79 @@
-/*
-*{
-    margin: 1;
-    padding: 1;
-    font-size: 1em;
-}
-*/
-
 html{
     --margine-main_left: 10px;
+    --background-color: beige;
+    --menu-height: 30px;
 }
 
 body{
-    background-color: beige;
+    background-color: var(--background-color);
     /* 
     margin:3;
     padding:3;
     */
+}
+
+ul.menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    margin: 1;
+    justify-content: center;
+}
+ul.menu>li{
+    width: 200px;
+    outline: 1px solid black;
+}
+
+ul.menu li{
+    width: 120px;
+    list-style-type: none;
+    height: var(--menu-height);
+    padding-left: 5px;
+    background-color: rgb(233, 222, 176);
+}
+ul.menu li:hover{
+    color: rgb(233, 222, 176);
+    background:rgb(108, 179, 62);
+}
+ul.menu li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: var(--menu-height);
+    color: rgb(33, 77, 4);
+    text-decoration:none;
+    font-weight: bold;
+}
+
+ul.submenu{
+    display: none;
+    z-index: 2;
+    position:relative;
+}
+ul.menu li:hover ul.submenu{
+    display: block;
+}
+
+
+main{
+    background-color: aliceblue;
+    margin-left: var(--margine-main_left);
+    margin-right: 10px;
+    padding-left: 1px;
+    padding-right: 4px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+header{
+    border-bottom: 1px solid grey;
+}
+
+section{
+    outline: 1px solid magenta;
 }
 
 p.c1{
@@ -25,17 +83,33 @@ p{
     color: slateblue;
 }
 
-
-main{
-    background-color: aliceblue;
-    margin-left: var(--margine-main_left);
-    margin-right: 20px;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 1px;
-    padding-bottom: 1px;
+#container1{
+    display: grid;
+    grid-template-areas:    "video1 video2";
+    grid-template-columns: 1.7fr 1.5fr;
+    padding-left: 2px;
+    background-color:  rgb(250, 216, 177);
+}
+#video1{
+    grid-area: video1;
+    padding-left: 10px;
+}
+#video2{
+    grid-area: video2;
+    padding-left: 10px;
 }
 
-header{
-    border-bottom: 1px solid grey;
+#container2{
+    display: grid;
+    grid-template-areas:    "Salut Salut"
+                            "Promotii Promotii";
+    grid-template-columns: 1fr 1fr;
+}
+#Salut{
+    grid-area: Salut;
+    padding-left: 3px;
+}
+#Promotii{
+    grid-area: Promotii;
+    padding-left: 3px;
 }
