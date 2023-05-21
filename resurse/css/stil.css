@@ -6,10 +6,19 @@ html{
 
 body{
     background-color: var(--background-color);
-    /* 
-    margin:3;
-    padding:3;
-    */
+}
+
+@keyframes submenu_animation{
+    0%{transform: scaleY(0);}
+    20%{transform: scaleY(0.2);}
+    40%{transform: scaleY(0.5);}
+    60%{transform: scaleX(0.8);}
+    100%{transform: scaleX(1);}
+}
+
+nav ul{
+    padding: 0;
+    margin: 0;
 }
 
 ul.menu{
@@ -17,25 +26,17 @@ ul.menu{
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    padding: 0;
-    margin: 1;
     justify-content: center;
-}
-ul.menu>li{
-    width: 200px;
-    outline: 1px solid black;
 }
 
 ul.menu li{
     width: 120px;
     list-style-type: none;
     height: var(--menu-height);
-    padding-left: 5px;
+    padding-top: 1px;
     background-color: rgb(233, 222, 176);
-}
-ul.menu li:hover{
-    color: rgb(233, 222, 176);
-    background:rgb(108, 179, 62);
+    outline: 1px solid black;
+    transition: background 0.1s linear, outline 0.02s linear, padding-top 0.02s;
 }
 ul.menu li a{
     display: block;
@@ -47,14 +48,34 @@ ul.menu li a{
     text-decoration:none;
     font-weight: bold;
 }
+ul.menu li:hover{
+    background:rgb(108, 179, 62);
+    padding-top: 1px;
+    outline: 2px solid rgb(32, 102, 4);
+    color: rgb(66, 77, 4);
+    /* transition: color 1s linear, background 0.5s linear; */
+}
 
 ul.submenu{
     display: none;
     z-index: 2;
-    position:relative;
+    position: relative;
+}
+ul.submenu li:hover{
+    background: rgb(214, 241, 59);
+    color:rgb(33, 77, 4);
+    transition: background 0.3s linear, color 0.1s linear;
 }
 ul.menu li:hover ul.submenu{
     display: block;
+    padding: 7px 0px 4px 0px;
+    transition: color 0.5s linear;
+    animation: submenu_animation 0.3s 1 linear;
+}
+ul.menu li:hover ul.submenu li{
+    color:rgb(233, 222, 176);
+    animation: submenu_animation 0.5s 1 linear;
+    margin-bottom: 5px;
 }
 
 
@@ -78,9 +99,6 @@ section{
 
 p.c1{
     color: red;
-}
-p{
-    color: slateblue;
 }
 
 #container1{
