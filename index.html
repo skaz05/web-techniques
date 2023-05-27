@@ -16,24 +16,22 @@
         <meta name="msapplication-config" content="./resurse/ico/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
         <link rel="stylesheet" type="text/css" href="./resurse/css/stil.css">
-        <style>
-
-        </style>
     </head>
     <body>
         <header>
-            <h1>eCofetarie</h1>
+            <h1 id="title">eCofetarie</h1>
             <nav>
+                <input type="checkbox" id="check-menu"/>
                 <ul class="menu">
                     <li>
                         <a href="index.html">Acasa</a>
-                            <ul class="submenu">
-                                <li><a href="#Salut">Salut (H2)</a></li>
-                                <li><a href="#video1">Video 1</a></li>
-                                <li><a href="#video2">Video 2</a></li>
-                                <li><a href="#Promotii">Promotii</a></li>
-                                <li><a href="#Footer">Footer</a></li>
-                            </ul>
+                        <ul class="submenu">
+                            <li><a href="#Salut">Salut (H2)</a></li>
+                            <li><a href="#video1">Video 1</a></li>
+                            <li><a href="#video2">Video 2</a></li>
+                            <li><a href="#Promotii">Promotii</a></li>
+                            <li><a href="#Footer">Footer</a></li>
+                        </ul>
                     </li>
                     <li><a href="about.html">Despre</a></li>
                     <li><a href="images.html">Imagini</a></li>
@@ -62,6 +60,18 @@
                 <br/> <br/>
                 <iframe name="ifr-video2" width="460" height="315" src="https://www.youtube.com/embed/UJ4e4XVQQcY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <br/>
+            </section>
+        </div>
+        <div id="rotator">
+            <section id="rotating-images">
+                <h2>Imagine Rotativa</h2>
+                <figure id="rotating-buttercake" class="rotating-image">
+                    <picture>
+                        <source srcset="./resurse/imagini/buttercake_big.jpg" media="(min-width:1200px)"/>
+                        <source srcset="./resurse/imagini/prajitura1.png" media="(max-width:1200px)"/>
+                        <img src="./resurse/imagini/prajitura1.png" alt="img_prajitura_1" title="buttercake">
+                    </picture>
+                </figure>
             </section>
         </div>
         <br/>

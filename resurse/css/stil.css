@@ -2,6 +2,7 @@ html{
     --margine-main_left: 10px;
     --background-color: beige;
     --menu-height: 30px;
+    --menu-background-color: rgb(233, 222, 176)
 }
 
 body{
@@ -16,9 +17,34 @@ body{
     100%{transform: scaleX(1);}
 }
 
+@keyframes rotate_animation{
+    100%{transform: rotate(360deg);}
+}
+
+
+header{
+    border-bottom: 1px solid grey;
+}
+
+#title{
+    text-align: center;
+}
+
+nav{
+    background-color: var(--menu-background-color);
+}
 nav ul{
     padding: 0;
     margin: 0;
+}
+
+#check-menu{
+    display: none;
+}
+@media screen and (max-width: 1200px) {
+    #check-menu {
+        display: inline;
+    }
 }
 
 ul.menu{
@@ -34,7 +60,7 @@ ul.menu li{
     list-style-type: none;
     height: var(--menu-height);
     padding-top: 1px;
-    background-color: rgb(233, 222, 176);
+    background-color: var(--menu-background-color);
     outline: 1px solid black;
     transition: background 0.1s linear, outline 0.02s linear, padding-top 0.02s;
 }
@@ -60,6 +86,7 @@ ul.submenu{
     display: none;
     z-index: 2;
     position: relative;
+    transform-origin: center 0
 }
 ul.submenu li:hover{
     background: rgb(214, 241, 59);
@@ -74,10 +101,24 @@ ul.menu li:hover ul.submenu{
 }
 ul.menu li:hover ul.submenu li{
     color:rgb(233, 222, 176);
-    animation: submenu_animation 0.5s 1 linear;
+    /* animation: submenu_animation 0.5s 1 linear; */
     margin-bottom: 5px;
 }
 
+div#rotator{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+#rotating-buttercake{
+    animation-play-state: paused;
+}
+#rotating-buttercake:hover{
+    animation: rotate_animation 3s infinite linear;
+    animation-play-state: running;
+}
 
 main{
     background-color: aliceblue;
@@ -87,10 +128,6 @@ main{
     padding-right: 4px;
     padding-top: 1px;
     padding-bottom: 1px;
-}
-
-header{
-    border-bottom: 1px solid grey;
 }
 
 section{
@@ -103,7 +140,8 @@ p.c1{
 
 #container1{
     display: grid;
-    grid-template-areas:    "video1 video2";
+    grid-template-areas:    "video1 video2"
+                            "rotating-images rotating-images";
     grid-template-columns: 1.7fr 1.5fr;
     padding-left: 2px;
     background-color:  rgb(250, 216, 177);
@@ -115,6 +153,12 @@ p.c1{
 #video2{
     grid-area: video2;
     padding-left: 10px;
+}
+#rotating-images{
+    grid-area: rotating-images;
+    padding-left: 0px;
+    outline: 0px solid;
+    text-align: center;
 }
 
 #container2{
