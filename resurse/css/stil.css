@@ -30,21 +30,10 @@ header{
     text-align: center;
 }
 
-nav{
-    background-color: var(--menu-background-color);
-}
+
 nav ul{
     padding: 0;
     margin: 0;
-}
-
-#check-menu{
-    display: none;
-}
-@media screen and (max-width: 1200px) {
-    #check-menu {
-        display: inline;
-    }
 }
 
 ul.menu{
@@ -174,4 +163,45 @@ p.c1{
 #Promotii{
     grid-area: Promotii;
     padding-left: 3px;
+}
+
+#check-menu{
+    display: none;
+}
+#menu-icon{
+    display: none;
+}
+@media screen and (max-width: 1200px) {
+    ul.menu{
+        display: none;
+        position: absolute;
+        left: 0;
+        top: var(--menu-height);
+    }
+
+    #menu-icon{
+        height: var(--menu-height);
+        display: inline-block;
+    }
+
+    nav{
+        position: relative;
+        height: var(--menu-height);
+    }
+    #check-menu {
+        display: none;
+    }
+    #check-menu:checked~ul.menu{
+        display: block;
+        /* flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: left; */
+    }
+    ul.menu li{
+        width: 100%;
+    }
+    nav{
+        background-color: var(--menu-background-color);
+    }
 }
