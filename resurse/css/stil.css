@@ -90,7 +90,6 @@ ul.menu li:hover ul.submenu{
 }
 ul.menu li:hover ul.submenu li{
     color:rgb(233, 222, 176);
-    /* animation: submenu_animation 0.5s 1 linear; */
     margin-bottom: 5px;
 }
 
@@ -188,11 +187,13 @@ p.c1{
         position: relative;
         height: var(--menu-height);
     }
-    #check-menu {
+    #check-menu{
         display: none;
     }
     #check-menu:checked~ul.menu{
         display: block;
+        width: 30%;
+        animation: submenu_animation 0.5s 1 linear;
         /* flex-direction: column;
         flex-wrap: wrap;
         width: 100%;
@@ -203,5 +204,31 @@ p.c1{
     }
     nav{
         background-color: var(--menu-background-color);
+    }
+
+    #container1{
+        display: grid;
+        grid-template-areas:    "video1"
+                                "video2";
+        grid-template-columns: 1fr;
+        padding-left: 2px;
+        background-color:  rgb(250, 216, 177);
+    }
+    #container2{
+        display: grid;
+        grid-template-areas:    "Salut"
+                                "Promotii";
+        grid-template-columns: 1fr;
+        padding-left: 2px;
+    }
+    #Salut{
+        grid-area: Salut;
+        padding-left: 51px;
+        padding-right: 51px;
+    }
+    #Promotii{
+        grid-area: Promotii;
+        padding-left: 51px;
+        padding-right: 51px;
     }
 }
