@@ -34,6 +34,9 @@ header{
     text-align: center;
 }
 
+#welcome{
+    padding: 2px;
+}
 
 nav ul{
     padding: 0;
