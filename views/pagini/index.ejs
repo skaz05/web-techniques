@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <title>Acasa - eCofetarie</title>
+        <%- include ("../fragmente/head.ejs") %>
+
+    </head>
+    
+    <%- include ("../fragmente/header.ejs") %>
+
+    <body>
+        <div id="container1">
+            <section id="video1">
+                <h2>Lista 1 cu video-uri relevante</h2>
+                <ul>
+                    <li><a href="https://www.youtube.com/embed/WPni755-Krg" target="ifr-video">Relaxing focusing music that helped with the creation of this website and studying this course</a></li>
+                    <li><a href="https://www.youtube.com/embed/UJ4e4XVQQcY" target="ifr-video">Sith Meditation Music</a></li>
+                </ul>
+                <iframe name="ifr-video" width="460" height="315" src="https://www.youtube.com/embed/WPni755-Krg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <br/>
+            </section>
+            <br/>
+            <section id="video2">
+                <h2>Lista 2 cu video-uri relevante - layout diferit</h2>
+                <a href="https://www.youtube.com/embed/WPni755-Krg" target="ifr-video2">[Relaxing Focusing Music]</a>
+                <b>   |   </b>
+                <a href="https://www.youtube.com/embed/UJ4e4XVQQcY" target="ifr-video2">  [Sith Meditation Music]</a>
+                <br/> <br/>
+                <iframe name="ifr-video2" width="460" height="315" src="https://www.youtube.com/embed/UJ4e4XVQQcY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <br/>
+            </section>
+        </div>
+        <div id="rotator">
+            <section id="rotating-images">
+                <h2>Imagine Rotativa</h2>
+                <figure id="rotating-buttercake" class="rotating-image">
+                    <picture id="buttercake_pic">
+                        <source srcset="./resurse/imagini/buttercake_big.jpg" media="(min-width:1200px)"/>
+                        <source srcset="./resurse/imagini/prajitura1.png" media="(max-width:1200px)"/>
+                        <img src="./resurse/imagini/prajitura1.png" alt="img_prajitura_1" title="buttercake">
+                    </picture>
+                </figure>
+            </section>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <main>
+            <div id="container2">
+                <section id="Salut">
+                    <h2>Salut (H2)</h2>
+                    <p>Bine ai venit.</p>
+                    <h3>Ordered List Example:</h3>
+                    <ol>
+                        <li>abc</li>
+                        <li>abc</li>
+                        <li>abc</li>
+                    </ol>
+                </section>
+                <section id="Promotii">
+                    <h2>Promotii</h2>
+                    <p class="c1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti error consequuntur temporibus eveniet assumenda non laborum dolorum molestiae quos aspernatur nostrum sit sint, dolorem voluptas, magnam aliquam? Consequuntur, eveniet tempora.</p>
+                    <ol>
+                        <li>abc</li>
+                        <li>abc</li>
+                        <li>abc</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+
+        <%- include ("../fragmente/footer.ejs") %>
+        
+    </body>
+</html>

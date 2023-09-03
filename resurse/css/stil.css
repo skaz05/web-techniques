@@ -5,7 +5,14 @@ html{
     --menu-background-color: rgb(233, 222, 176)
 }
 
+footer {
+    margin-top: auto;
+}
+
 body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background-color: var(--background-color);
 }
 
@@ -28,6 +35,10 @@ body{
 
 header{
     border-bottom: 1px solid grey;
+}
+
+#contact p{
+    padding-left: 5px;
 }
 
 #title{
@@ -82,7 +93,7 @@ ul.submenu{
     display: none;
     z-index: 2;
     position: relative;
-    transform-origin: center 0
+    transform-origin: center 0;
 }
 ul.submenu li:hover{
     background: rgb(214, 241, 59);
@@ -91,7 +102,7 @@ ul.submenu li:hover{
 }
 ul.menu li:hover ul.submenu{
     display: block;
-    padding: 7px 0px 4px 0px;
+    padding: 5px 0px 4px 0px;
     transition: color 0.5s linear;
     animation: submenu_animation 0.3s 1 linear;
 }
@@ -159,7 +170,6 @@ p.c1{
     outline: 0px solid;
     text-align: center;
 }
-
 #container2{
     display: grid;
     grid-template-areas:    "Salut Salut"
@@ -188,7 +198,13 @@ p.c1{
         left: 0;
         top: var(--menu-height);
     }
-
+    ul.submenu{
+        display: none;
+        position: absolute;
+        left: 0;
+        top: var(--menu-height);
+    }
+    
     #menu-icon{
         height: var(--menu-height);
         display: inline-block;
@@ -205,10 +221,14 @@ p.c1{
         display: block;
         width: 30%;
         animation: submenu_animation 0.5s 1 linear;
-        /* flex-direction: column;
+        flex-direction: column;
         flex-wrap: wrap;
-        width: 100%;
-        justify-content: left; */
+        justify-content: left;
+    }
+    #check-menu:checked~ul.menu ul.submenu{
+        width: 80%;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
     ul.menu li{
         width: 100%;

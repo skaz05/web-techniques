@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <title>Acasa - eCofetarie</title>
+        <%- include ("../fragmente/head.ejs") %>
+
+    </head>
+    
+    <%- include ("../fragmente/header.ejs") %>
+
+    <body>
+        <main>
+            <div id="container2">
+                <section id="Salut">
+                    <h2>TEST PAGE</h2>
+                    <p>Bine ai venit, bine ai testat.</p>
+                    <p>
+                        <% for(let i = locals.a; i <= locals.b; i++) { %>
+                            <%- i %> </br>
+                        <% } %>
+                    </p>
+                    c = "<%- locals.c %>"
+                </section>
+            </div>
+        </main>
+
+        <%- include ("../fragmente/footer.ejs") %>
+        
+    </body>
+</html>
