@@ -1,0 +1,12 @@
+- folder al proiectului cu toate fisierele necesare
+- prima pagina fara stilizare == index.html
+- 4 meta tags: charset, author, keywords, description
+- director "resurse"
+- body split into header/main/footer
+- header == navi system (u.l.) with generic options + h1 as site title
+- use tags, such as: section, article, aside.
+||- tag in tag
+- min. 2 tag-uri din: <p>, <ol>, <ul>, <blockquote>, <dl>;
+- imagine cu descriere + resize pe ecran mic, mediu, mare
+- textul sa contina toate keywords
+- cerinta (10*) -> 3 la alegere
