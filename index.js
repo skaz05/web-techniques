@@ -9,11 +9,6 @@ app.use("/resurse", express.static(path.join(__dirname, "resurse")));
 
 var wrongful_entries = [];
 
-// app.get(
-//     "/", function(req, res) {
-//         res.sendFile(path.join(root_dir, "/index.html"));
-//     }
-// );
 app.get(
     "/", function(req, res) {
         res.render(path.join(root_dir, "/views/pagini/index.ejs"));
@@ -48,11 +43,12 @@ app.get(
         res.render(path.join(root_dir, "/views/pagini/test.ejs"));
     }
 );
-app.get(
-    "/*", function(req, res) {
+app.use(
+    "/*", (req, res) => {
         let user_ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || null;
         current_date = new Date();
         breach_databody = {
+            "id": wrongful_entries.length,
             "user_ip" : user_ip,
             "url" : req.url,
             "date" : current_date
@@ -64,9 +60,28 @@ app.get(
             "\n\tData body: ", breach_databody
         );
         wrongful_entries.push(breach_databody);
+        console.log("Entry added to wrongful_entries list!");
+        res.status(400);
         res.render(path.join(root_dir, "/views/pagini/error.ejs"));
     }
 );
 
+async function printWrongfulEntries(given_list) {
+    while(true) {
+        current_date = new Date();
+        if (given_list.length === 0) {
+            console.log("No wrongful entries to print!", current_date);
+        }
+        else {
+            console.log("----------------------------");
+            console.log("Wrongful entries: \n", given_list);
+            console.log("----------------------------\n");
+        };
+        await new Promise(resolve => setTimeout(resolve, 10000));
+    }
+}
+
 app.listen(8088);
 console.log('Listening on port 8088...\n');
+
+printWrongfulEntries(wrongful_entries);
