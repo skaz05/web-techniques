@@ -1,0 +1,11 @@
+@use 'sass:list';
+@use 'sass:math';
+$transformations_list: ((rotateZ(0deg), rotateZ(135deg)), (skew(0deg), skew(90deg)), (scaleX(1) rotateZ(0), scaleX(0) rotateZ(90deg)));
+$index: math.random(list.length($transformations_list));
+
+
+@use '../scripts/scss/animated_gallery_frag' with (
+    $transformation_i: list.nth(list.nth($transformations_list,$index), 1),
+    $transformation_f: list.nth(list.nth($transformations_list,$index), 2),
+    $server_set: <%- locals.color %>
+);

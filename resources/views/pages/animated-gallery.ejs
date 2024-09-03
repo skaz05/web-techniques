@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Zerogo Systems</title>
+        <meta name="keywords" content="sysadmin, remote, devops, admin, shop, eshop, full-remote"/>
+        <meta name="description" content="Prima eCofetarie din Romania"/>
+
+        <%- include("../elements/head.ejs"); %>
+
+        <!-- CSS starts here-->
+        <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
+        <link rel="stylesheet" type="text/css" href="./resources/css/counter.css">
+        <link rel="stylesheet" type="text/css" href="./resources/animated_gallery.css">
+    </head>
+
+    <body>
+        <%- include("../elements/header.ejs"); %>
+        <!-- to do:
+         implement lightbox to popup any clicked image
+         and shadow everything else with a 80% opacity maybe 
+         -->
+        <main>
+            <H1>Template-rendered Animated Gallery Page</H1>
+            <section id = "animated-gallery-section">
+
+            <!-- </section>
+            <section id="welcome">
+                <h2>Picture Gallery</h2>
+                <div id="animated-gallery-grid" class="animated-gallery-grid">
+                    <% 
+                    for (let i = 0; i < locals.images.length; i++) { 
+                        image = locals.images[i]; %>
+                        <figure>
+                                <img src="<%- image.big %>" alt="<%- image.description %>" style="width:auto"/>
+                        </figure>
+                    <% } %>
+                </div>
+            </section> -->
+
+
+            <div id="animated-gallery" class="gallery-a">
+                <div>
+                    <% 
+                    for (let i = 0; i < locals.images.length; i++) { 
+                        image = locals.images[i]; %>
+                        <figure>
+                            <img src="<%- image.big %>" alt="<%- image.description %>" style="width:auto"/>
+                            <figcaption><%- image.description %></figcaption>
+                        </figure>
+                    <% } %>
+                </div>
+            </div>
+        </main>
+
+        <%- include("../elements/footer.ejs"); %>
+
+    </body>
+</html>

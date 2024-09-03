@@ -1,0 +1,338 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+} */
+
+/* Variables section */
+html {
+    --margin-small: 5px 0px 0px 15px;
+    --menu-height: 30px;
+    --menu-background-color: rgb(233, 222, 176);
+    --background-gradient-3: linear-gradient(90deg, rgba(227,188,11,1) 0%, rgba(238,185,36,1) 25%, rgba(0,212,255,1) 100%);
+    --background-gradient-5: linear-gradient(90deg, rgba(227,188,11,1) 0%, rgba(238,185,36,1) 15%, rgba(0,212,255,1) 50%, rgba(238,185,36,1) 95%, rgba(227,188,11,1) 100%);
+}
+
+@keyframes submenu_animation{
+    0%{transform: scaleY(0);}
+    20%{transform: scaleY(0.2);}
+    40%{transform: scaleY(0.5);}
+    60%{transform: scaleX(0.8);}
+    100%{transform: scaleX(1);}
+}
+
+/* @keyframes rotate_animation{
+    0%{transform: rotate(0deg) scale(1);}
+    25%{transform: rotate(90deg) scale(0.5);}
+    50%{transform: rotate(180deg) scale(0.8);}
+    75%{transform: rotate(270deg) scale(0.5);}
+    100%{transform: rotate(360deg) scale(1);}
+} */
+
+#hamburger-icon {
+    display: none;
+    height: var(--menu-height);
+    /* width: 10%;
+    height: 10%; */
+}
+#ch-menu {
+    display: none;
+}
+
+nav ul{
+    padding: 0;
+    margin: 0;
+}
+
+ul.menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+ul.menu li {
+    list-style-type: none;
+    width: 120px;
+    height: var(--menu-height);
+    padding-top: 1px;
+    background-color: rgb(235, 219, 255);
+    transition: background 0.1s linear, outline 0.02s linear, padding-top 0.02s;
+}
+ul.menu li a {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    outline: 1px solid black;
+    text-align: center;
+    font-weight: bold;
+    line-height: var(--menu-height);
+}
+ul.menu li:hover {
+    background: rgb(161, 67, 250);
+    outline: 1px solid rgb(141, 0, 143);
+    color: rgb(237, 230, 240);
+}
+/* ul.menu li a:hover {
+    text-decoration: none;
+    color: rgb(237, 230, 240);
+} */
+ul.menu li:hover > a,
+ul.menu li:hover ul.submenu li:hover a {
+    color: rgb(237, 230, 240); 
+}
+ul.submenu {
+    display: none;
+    position: relative;
+    /* position: absolute; */
+    /* top:100%; */
+    transform-origin: center 0;
+    z-index: 2;
+}
+ul.submenu li:hover {
+    background: rgb(236, 141, 255);
+    color: black;
+    transition: background 0.3s linear, color 0.1s linear;
+}
+ul.menu li:hover ul.submenu {
+    display: block;
+    padding: 5px 0px 4px 0px;
+    transition: color 0.5s linear;
+    animation: submenu_animation 0.3s 1 linear;
+}
+ul.menu li:hover ul.submenu li{
+    color:rgb(233, 222, 176);
+    margin-bottom: 5px;
+}
+
+
+ul.subsubmenu {
+    display: none;
+    padding: 5px 0px 0px 10px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    flex-direction: row;
+    z-index: 3;
+}
+ul.subsubmenu li {
+    list-style-type: none;
+    width: 120px;
+    height: var(--menu-height);
+    padding-top: 1px;
+    /* background: rgb(236, 141, 255); */
+    background-color: rgb(45, 91, 93);
+    /* background-color: rgb(152, 178, 246); */
+    /* transition: background 0.1s linear, outline 0.02s linear, padding-top 0.02s; */
+}
+/* ul.subsubmenu li a {
+    color: white;
+} */
+ul.submenu li:hover > ul.subsubmenu {
+    display: flex;
+    animation: submenu_animation 0.3s 1 linear;
+}
+ul.menu li ul.submenu li ul.subsubmenu li:hover > a {
+    background-color: rgb(152, 178, 246);
+    color: black;
+    transition: background 0.3s linear, color 0.1s linear;
+}
+/* ul.subsubmenu li a:hover {
+    color: black !important;
+} */
+
+body {
+    background-color: rgb(244, 232, 218);
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+header {
+    background-color: blanchedalmond;
+    margin: 1px 0px 0px 0px;
+    padding: 1px 5px 0px 15px;
+    border-bottom: 1px solid black;
+}
+
+
+main {
+    background-color: rgb(250, 250, 250);
+    margin: 0px 0px 2px 0px;
+    padding: 0px 5px 1px 20px;
+    border-bottom: 1px solid black;
+}
+
+footer {
+    /* margin: var(--margin-small); */
+    padding: 1px 15px 1px 15px;
+}
+
+p {
+    color: rebeccapurple;
+}
+
+#intro {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-rows: auto;
+    gap: 10px;
+    /* grid-template-rows: auto auto auto; */
+    /* grid-template-areas: 
+        "chapter_1 chapter_2"
+        "chapter_1_1 chapter_2_1"
+        "chapter_1_2 ."; */
+}
+
+.chapter {
+    padding: 1px 3px 1px 3px;
+    border-bottom: 1px dotted black;
+    /* border: 1px solid black; */
+}
+.sub-chapter {
+    padding: 0px 1px 1px 2px;
+    /* margin: 0px 0px 1px 0px; */
+    border-bottom: 1px dotted gray;
+}
+
+#chapter_1 {
+    /* grid-area: chapter_1; */
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+#chapter_2 {
+    /* grid-area: chapter_2; */
+    grid-column: 1;
+    grid-row: 3;
+}
+#chapter_1_1 {
+    /* grid-area: chapter_1_1; */
+    grid-column: 2;
+    grid-row: 1;
+}
+#chapter_1_2 {
+    /* grid-area: chapter_1_2; */
+    grid-column: 2;
+    grid-row: 2;
+}
+#chapter_2_1 {
+    /* grid-area: chapter_2_1; */
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#frame_container_1 li {
+    list-style-type: none;
+}
+#frame_container_1 {
+    display: grid;
+    /* grid-template-areas: "frame_1_ref frame_1"; */
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 5px;
+}
+#frame_1_ref {
+    grid-column: 1;
+    grid-row: 1;
+}
+#frame_1 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.outro {
+    width: auto;
+    text-align: center;
+    outline: none;
+    border-top: 1px solid black;
+    background: linear-gradient(90deg, rgba(227,188,11,0) 0%, rgba(238,185,36,0.3) 15%, rgba(0,212,255,0.5) 50%, rgba(238,185,36,0.3) 85%, rgba(227,188,11,0) 100%);
+}
+
+/* define media queries for mobile layout 
+   and maybe themes??? 
+*/
+@media screen and (max-width: 1000px) {
+    body {
+        padding: 0px 15px 0px 15px;
+    }
+    nav {
+        position: relative;
+    }
+    ul.menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        /* top: var(--menu-height) */
+    }
+
+    #hamburger-icon {
+        display: inline-block;
+        height: var(--menu-height);
+        /* width: 10%;
+        height: 10%; */
+    }
+    #ch-menu {
+        display: none;
+    }
+
+    #ch-menu:checked~ul.menu {
+        display: block;
+    }
+    ul.menu li {
+        width: 100%;
+    }
+
+    #intro {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* gap: 10px; */
+        grid-template-areas: 
+            "chapter_1"
+            "chapter_1_1"
+            "chapter_1_2"
+            "chapter_2"
+            "chapter_2_1";
+    }
+    .chapter {
+        padding: 1px 3px 10px 3px;
+        border-bottom: 1px dotted black;
+        /* border: 1px solid black; */
+    }
+    .sub-chapter {
+        padding: 0px 0px 0px 15px;
+        /* margin: 0px 0px 1px 0px; */
+        border-bottom: 1px dotted gray;
+    }
+    
+    #chapter_1 {
+        grid-area: chapter_1;
+    }
+    #chapter_2 {
+        grid-area: chapter_2;
+    }
+    #chapter_1_1 {
+        grid-area: chapter_1_1;
+    }
+    #chapter_1_2 {
+        grid-area: chapter_1_2;
+    }
+    #chapter_2_1 {
+        grid-area: chapter_2_1;
+    }
+
+    #frame_container_1 {
+        /* outline: magenta 10px solid; */
+        display: grid;
+        grid-template-areas: "frame_1_ref"
+                            "frame_1";
+        grid-template-columns: 1fr;
+    }
+    #frame_1_ref {
+        grid-area: frame_1_ref;
+    }
+    #frame_1 {
+        grid-area: frame_1;
+    }
+
+}

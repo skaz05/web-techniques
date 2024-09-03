@@ -1,0 +1,299 @@
+/* Variables section for Dark Theme */
+html {
+    --margin-small: 5px 0px 0px 15px;
+    --menu-height: 30px;
+    --menu-background-color: rgb(50, 50, 50); /* Dark background */
+    --background-gradient-3: linear-gradient(90deg, rgba(50, 50, 50, 1) 0%, rgba(70, 70, 70, 1) 25%, rgba(90, 90, 90, 1) 100%); /* Dark gradient */
+    --background-gradient-5: linear-gradient(90deg, rgba(50, 50, 50, 1) 0%, rgba(70, 70, 70, 1) 15%, rgba(90, 90, 90, 1) 50%, rgba(70, 70, 70, 1) 95%, rgba(50, 50, 50, 1) 100%); /* Dark gradient */
+}
+
+@keyframes submenu_animation {
+    0% { transform: scaleY(0); }
+    20% { transform: scaleY(0.2); }
+    40% { transform: scaleY(0.5); }
+    60% { transform: scaleX(0.8); }
+    100% { transform: scaleX(1); }
+}
+
+#hamburger-icon {
+    display: none;
+    height: var(--menu-height);
+}
+
+#ch-menu {
+    display: none;
+}
+
+.hamburger-menu {
+    display: none;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Individual lines of the hamburger */
+.hamburger-menu .line {
+    background-color: white; /* Light line color for contrast */
+    height: 4px; /* Line height */
+    width: 100%; /* Line width to fill the container */
+    position: absolute; /* Position absolute for individual control */
+    left: 0; /* Align left within container */
+    transition: all 0.3s ease; /* Smooth transition for animation */
+}
+
+/* Positioning each line */
+.hamburger-menu .line:nth-child(1) {
+    top: 0; /* Top line */
+}
+
+.hamburger-menu .line:nth-child(2) {
+    top: 50%; /* Middle line */
+    transform: translateY(-50%); 
+}
+
+.hamburger-menu .line:nth-child(3) {
+    bottom: 0; 
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul.menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    background-color: var(--menu-background-color);
+}
+
+ul.menu li {
+    list-style-type: none;
+    width: 120px;
+    height: var(--menu-height);
+    padding-top: 1px;
+    background-color: rgb(70, 70, 70); /* Darker background */
+}
+
+ul.menu li a {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    outline: 1px solid white; /* Light outline */
+    text-align: center;
+    font-weight: bold;
+    line-height: var(--menu-height);
+    color: white; /* Light text color */
+}
+
+ul.menu li:hover {
+    background: rgb(100, 100, 100); /* Dark hover color */
+    outline: 1px solid rgb(120, 120, 120); /* Light outline on hover */
+    color: rgb(200, 200, 200); /* Light hover text color */
+    transition: background 0.1s linear, outline 0.02s linear, padding-top 0.02s;
+}
+
+ul.menu li:hover > a,
+ul.menu li:hover ul.submenu li:hover a {
+    color: rgb(200, 200, 200); /* Light text color on hover */
+}
+
+ul.submenu {
+    display: none;
+    position: relative;
+    transform-origin: center 0;
+    z-index: 2;
+    background-color: rgb(60, 60, 60); /* Dark background for submenu */
+}
+
+ul.submenu li:hover {
+    background: rgb(80, 80, 80); /* Darker hover background */
+    color: white; /* Light text color */
+    transition: background 0.3s linear, color 0.1s linear;
+}
+
+ul.menu li:hover ul.submenu {
+    display: block;
+    padding: 5px 0px 4px 0px;
+    transition: color 0.5s linear;
+    animation: submenu_animation 0.3s 1 linear;
+}
+
+ul.menu li:hover ul.submenu li {
+    color: rgb(200, 200, 200); /* Light text color */
+    margin-bottom: 5px;
+}
+
+ul.subsubmenu {
+    display: none;
+    padding: 5px 0px 0px 10px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    flex-direction: row;
+    z-index: 3;
+    background-color: rgb(70, 70, 70); /* Dark background for subsubmenu */
+}
+
+ul.subsubmenu li {
+    list-style-type: none;
+    width: 120px;
+    height: var(--menu-height);
+    padding-top: 1px;
+    background-color: rgb(80, 80, 80); /* Darker background */
+}
+
+ul.submenu li:hover > ul.subsubmenu {
+    display: flex;
+    animation: submenu_animation 0.3s 1 linear;
+}
+
+ul.menu li ul.submenu li ul.subsubmenu li:hover > a {
+    background-color: rgb(100, 100, 100); /* Dark hover color */
+    color: white; /* Light text color */
+    transition: background 0.3s linear, color 0.1s linear;
+}
+
+body {
+    background-color: rgb(40, 40, 40); /* Dark background color */
+    margin: 0px;
+    padding: 0px;
+    color: white; /* Light text color */
+}
+
+header {
+    background-color: rgb(50, 50, 50); /* Dark header background */
+    margin: 1px 0px 0px 0px;
+    padding: 1px 5px 0px 15px;
+    border-bottom: 1px solid white; /* Light border */
+}
+
+main {
+    background-color: rgb(45, 45, 45); /* Dark main background */
+    margin: 0px 0px 2px 0px;
+    padding: 0px 5px 1px 20px;
+    border-bottom: 1px solid white; /* Light border */
+}
+
+footer {
+    padding: 1px 15px 1px 15px;
+}
+
+p {
+    color: rgb(180, 180, 180); /* Light text color for paragraphs */
+}
+
+#intro {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-rows: auto;
+    gap: 10px;
+}
+
+.chapter {
+    padding: 1px 3px 1px 3px;
+    border-bottom: 1px dotted rgb(100, 100, 100); /* Light border for chapters */
+}
+
+.sub-chapter {
+    padding: 0px 1px 1px 2px;
+    border-bottom: 1px dotted rgb(80, 80, 80); /* Light border for sub-chapters */
+}
+
+#frame_container_1 li {
+    list-style-type: none;
+}
+
+#frame_container_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 5px;
+}
+
+.outro {
+    width: auto;
+    text-align: center;
+    outline: none;
+    border-top: 1px solid white; /* Light border */
+    background: linear-gradient(90deg, rgba(60, 60, 60, 0) 0%, rgba(80, 80, 80, 0.3) 15%, rgba(100, 100, 100, 0.5) 50%, rgba(80, 80, 80, 0.3) 85%, rgba(60, 60, 60, 0) 100%); /* Dark gradient */
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        padding: 0px 15px 0px 15px;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    ul.menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        width: 100%;
+    }
+
+    #hamburger-icon {
+        display: inline-block;
+        height: var(--menu-height);
+    }
+
+    .hamburger-menu {
+        display: inline-block;
+        width: 30px;
+        height: 25px;
+        position: relative;
+    }
+
+    .hamburger-menu .line {
+        background-color: white; /* Light line color for dark theme */
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        transition: all 0.3s ease;
+    }
+
+    #ch-menu:checked~ul.menu {
+        display: block;
+        transition: all 0.5s linear;
+    }
+
+    ul.menu li {
+        width: 100%;
+    }
+
+    #intro {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "chapter_1"
+            "chapter_1_1"
+            "chapter_1_2"
+            "chapter_2"
+            "chapter_2_1";
+    }
+
+    .chapter {
+        padding: 1px 3px 10px 3px;
+        border-bottom: 1px dotted rgb(100, 100, 100); /* Light border */
+    }
+
+    .sub-chapter {
+        padding: 0px 0px 0px 15px;
+        border-bottom: 1px dotted rgb(80, 80, 80); /* Light border */
+    }
+
+    #frame_container_1 {
+        display: grid;
+        grid-template-areas: "frame_1_ref"
+                             "frame_1";
+        grid-template-columns: 1fr;
+    }
+}

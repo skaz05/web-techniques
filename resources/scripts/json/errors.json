@@ -1,0 +1,36 @@
+{
+    "errors_images_path": "resources/images/errors",
+
+    "404": {
+        "title": "404 - Page Not Found!",
+        "text": "Page does not exist (*yet).",
+        "image": "404-1.webp",
+        "alt_image": "404-2.webp"
+    },
+    "403": {
+        "title": "403 - Forbidden",
+        "text": "You are naughty, you pesky little... go back to where you came from!<br> This occurence has been logged.",
+        "image": "403-1.jpeg",
+        "alt_image": "403-2.jpeg"
+    },
+    "401": {
+        "title": "401 - Unauthorized",
+        "text": "Please provide proper authorization / credentials.",
+        "image": "401-1.jpeg",
+        "alt_image": "401-3.jpeg"
+    },
+    "400": {
+        "title": "400 - Bad Request",
+        "text": "You are naughty... go back to where you came from!<br> Please provide proper authorization / credentials.",
+        "image": "400-1.jpeg",
+        "alt_image": "400-2.jpeg"
+    },
+
+
+    "1": {
+        "title": "Site currently unavailable",
+        "text": "Something went wrong...<br> Please go back to the index page.",
+        "image": "error-foxes.jpeg",
+        "alt_image": "error-foxes.jpeg"
+    }
+}

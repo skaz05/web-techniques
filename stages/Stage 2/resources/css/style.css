@@ -1,0 +1,136 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+} */
+
+/* Variables section */
+html {
+    --margin-small: 5px 0px 0px 15px;
+}
+
+body {
+    background-color: rgb(244, 232, 218);
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+header {
+    background-color: blanchedalmond;
+    margin: 1px 0px 2px 0px;
+    padding: 1px 5px 1px 15px;
+    border-bottom: 1px solid black;
+}
+
+ul.menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+ul.menu li {
+    width: 100px;
+}
+
+main {
+    background-color: rgb(250, 250, 250);
+    margin: 1px 0px 2px 0px;
+    padding: 1px 5px 1px 20px;
+    border-bottom: 1px solid black;
+}
+
+footer {
+    /* margin: var(--margin-small); */
+    padding: 1px 15px 1px 15px;
+}
+
+p {
+    color: rebeccapurple;
+}
+
+/* section {
+    outline: 1px solid rgb(87, 101, 14)
+} */
+
+#intro {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-rows: auto;
+    gap: 10px;
+    /* grid-template-rows: auto auto auto; */
+    /* grid-template-areas: 
+        "chapter_1 chapter_2"
+        "chapter_1_1 chapter_2_1"
+        "chapter_1_2 ."; */
+}
+
+.chapter {
+    padding: 1px 3px 1px 3px;
+    border-bottom: 1px dotted black;
+    /* border: 1px solid black; */
+}
+.sub-chapter {
+    padding: 0px 1px 1px 2px;
+    /* margin: 0px 0px 1px 0px; */
+    border-bottom: 1px dotted gray;
+}
+
+#chapter_1 {
+    /* grid-area: chapter_1; */
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+#chapter_2 {
+    /* grid-area: chapter_2; */
+    grid-column: 1;
+    grid-row: 3;
+}
+#chapter_1_1 {
+    /* grid-area: chapter_1_1; */
+    grid-column: 2;
+    grid-row: 1;
+}
+#chapter_1_2 {
+    /* grid-area: chapter_1_2; */
+    grid-column: 2;
+    grid-row: 2;
+}
+#chapter_2_1 {
+    /* grid-area: chapter_2_1; */
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#frame_container_1 {
+    display: grid;
+    /* grid-template-areas: "frame_1_ref frame_1"; */
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 5px;
+}
+#frame_1_ref {
+    grid-column: 1;
+    grid-row: 1;
+}
+#frame_1 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.outro {
+    width: auto;
+    text-align: center;
+    outline: none;
+    border-top: 1px solid black;
+}
+
+/* define media queries for mobile layout 
+   and maybe themes??? 
+*/
+@media screen and (max-width: 800px) {
+    
+    footer{
+        padding: 3px;
+    }
+}

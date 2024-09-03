@@ -1,0 +1,28 @@
+{
+  "name": "tw_proiect",
+  "version": "1.0.0",
+  "description": "Salutare,",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "proiect",
+    "tehnici",
+    "web",
+    "systemops",
+    "ops",
+    "devops",
+    "dev",
+    "zerogo"
+  ],
+  "author": "sebastian t",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "pg": "^8.12.0",
+    "sass": "^1.77.8",
+    "sharp": "^0.33.5"
+  }
+}

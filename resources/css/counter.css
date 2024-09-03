@@ -1,0 +1,42 @@
+#gallery-grid {
+    counter-reset: img_number 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+#gallery-grid picture {
+    width: 100%;
+    height: auto;
+    display: flex;
+    /* outline: 1px solid black; */
+}
+
+#gallery-grid figcaption::before {
+    counter-increment: img_number 1;
+    content: counter(img_number, european) ". ";
+}
+
+#gallery-grid figure:nth-child(odd) figcaption{
+    background-color: red;
+}
+
+#gallery-grid figure img{
+    filter:brightness(70%) contrast(90%);
+    border-radius: 0px;
+}
+#gallery-grid figure:hover img{
+    filter:brightness(110%) contrast(105%);
+    border-radius: 25px;
+    transition: filter 0.3s linear, border-radius 0.5s linear;
+}
+#gallery-grid figure:hover figcaption{
+    letter-spacing: 2px;
+}
+picture.gallery-picture {
+    image-orientation: from-image;
+}

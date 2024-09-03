@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Zerogo Systems</title>
+        <meta name="keywords" content="sysadmin, remote, devops, admin, shop, eshop, full-remote"/>
+        <meta name="description" content="Prima eCofetarie din Romania"/>
+
+        <%- include("../elements/head.ejs"); %>
+
+        <!-- CSS starts here-->
+        <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
+        <link rel="stylesheet" type="text/css" href="./resources/css/counter.css">
+    </head>
+
+    <body>
+        <%- include("../elements/header.ejs"); %>
+        <!-- to do:
+         implement lightbox to popup any clicked image
+         and shadow everything else with a 80% opacity maybe 
+         -->
+        <main>
+            <H1>Template-rendered Gallery Page</H1>
+            <section id="welcome">
+                <h2>Picture Gallery</h2>
+                <div id="gallery-grid" class="gallery-grid">
+                    <% for (let image of locals.images) { %>
+                        <figure>
+                            <picture title="<%- image.description %>" class="gallery-picture">
+                                <source srcset="<%- image.medium %>" media="(max-width:1000px)"/>
+                                <source srcset="<%- image.big %>" media="(max-width:1200px)"/>
+                                <img src="<%- image.big %>" alt="<%- image.description %>" style="width:auto"/>
+                            </picture>
+                            <figcaption><%- image.description  %></figcaption>
+                        </figure>
+                    <% } %>
+                </div>
+            </section>
+        </main>
+
+        <%- include("../elements/footer.ejs"); %>
+
+    </body>
+</html>

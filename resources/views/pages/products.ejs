@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Zerogo Systems</title>
+        <meta name="keywords" content="sysadmin, remote, devops, admin, shop, eshop, full-remote"/>
+        <meta name="description" content="Prima eCofetarie din Romania"/>
+
+        <%- include("../elements/head.ejs"); %>
+
+        <!-- CSS starts here-->
+        <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
+        <!-- <link rel="stylesheet" type="text/css" href="./resources/css/style-dark.css"> -->
+        <link rel="stylesheet" type="text/css" href="./resources/css/products_page.css">
+        
+    </head>
+
+    <body>
+        <%- include("../elements/header.ejs"); %>
+        <!-- to do:
+         implement lightbox to popup any clicked image
+         and shadow everything else with a 80% opacity maybe 
+         -->
+        <main>
+            <H1>Template-rendered Products Page</H1>
+            <h2>Products</h2>
+            <div id = "products_filter" class = "products_filter">
+                Current date: 
+                <button id="show_date_button">Show date</button>
+                <p id="p1"></p>
+                <script src="./resources/scripts/js/products_filter.js">
+                    
+                </script>
+            </div>
+            <div id="products-grid" class="products-grid">
+                <ul class="product-list"">
+                    <% for (let product of locals.products) { %>
+                    <li class="product-listing">
+                        <figure class="product_image">
+                            <img src="<%- locals.product_image_path %>"/>
+                        </figure>
+                        <p class="product-name">
+                            <%- product.name %>
+                        </p>
+                        <p class="product-price">
+                            <%- product.price %> RON
+                        </p>
+                        <p class="add-to-cart">
+                            ADD TO CART
+                        </p>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </main>
+
+        <%- include("../elements/footer.ejs"); %>
+
+    </body>
+</html>

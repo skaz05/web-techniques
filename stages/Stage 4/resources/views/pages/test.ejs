@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Zerogo Systems</title>
+        <meta name="keywords" content="cofetarie, bakery, coffeeshop, coffee, shop, eshop, patiserie"/>
+        <meta name="description" content="Prima eCofetarie din Romania"/>
+
+        <%- include("../elements/head.ejs"); %>
+
+        <!-- CSS starts here-->
+        <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
+    </head>
+
+    <body>
+        <H1>TEST PAGE TEMPLATE</H1>
+        <%- include("../elements/header.ejs"); %>
+        
+        <main>
+            <section id="welcome" class="gallery">
+                <h2> Gallery attempt</h2>
+                <div id="gallery-grid">
+                    <% for (let image of locals.images) { %>
+                        <figure>
+                            <picture title="<%- image.description %>">
+                                <source srcset="<%- image.medium %>" media="(max-width:800px)"/>
+                                <source srcset="<%- image.big %>" media="(max-width:1200px)"/>
+                                <img src="<%- image.big %>" alt="<%- image.description %>" style="width:auto"/>
+                            </picture>
+                            <figcaption><%- image.description  %></figcaption>
+                        </figure>
+                    <% } %>
+                </div>
+            </section>
+        </main>
+
+        <%- include("../elements/footer.ejs"); %>
+
+    </body>
+</html>

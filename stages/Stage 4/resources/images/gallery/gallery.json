@@ -1,0 +1,54 @@
+{
+    "gallery_path": "resources/images/gallery",
+    "gallery_name": "Slice of life",
+    "images": [
+        {
+            "filename": "cat.jpeg",
+            "description": "Cat sitting on a flower pot"
+        }, 
+        {
+            "filename": "cat_2.JPG",
+            "description": "Cat waiting for food"
+        }, 
+        {
+            "filename": "cat_foreign.JPG",
+            "description": "Foreign cat stalking around my yard"
+        }, 
+        {
+            "filename": "flowers_purple.jpeg",
+            "description": "Pretty purple flowers - Iris"
+        }, 
+        {
+            "filename": "flowers_yellow.jpeg",
+            "description": "Pretty purple flowers - Gazania"
+        },
+        {
+            "filename": "guitars.jpeg",
+            "description": "Guitars sitting on stands"
+        }, 
+        {
+            "filename": "kittens.JPG",
+            "description": "Kittens playing around"
+        }, 
+        {
+            "filename": "lantern.jpeg",
+            "description": "Lantern being lit by the seaside"
+        }, 
+        {
+            "filename": "puppy.jpeg",
+            "description": "Puppy waiting for food"
+        },
+        {
+            "filename": "sky.jpeg",
+            "description": "Summery sky by the seaside"
+        }, 
+        {
+            "filename": "sushi.jpeg",
+            "description": "Tasty treat for humans"
+        }, 
+        {
+            "filename": "umbrellas.jpeg",
+            "description": "Umbrellas by the seaside"
+        }
+    ]
+}
