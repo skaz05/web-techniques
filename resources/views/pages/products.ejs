@@ -3,15 +3,18 @@
     <head>
         <title>Zerogo Systems</title>
         <meta name="keywords" content="sysadmin, remote, devops, admin, shop, eshop, full-remote"/>
-        <meta name="description" content="Prima eCofetarie din Romania"/>
+        <meta name="description" content="Primul sistem de SysAdmin full-remote din Romania"/>
 
         <%- include("../elements/head.ejs"); %>
 
         <!-- CSS starts here-->
         <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
-        <!-- <link rel="stylesheet" type="text/css" href="./resources/css/style-dark.css"> -->
+        <link rel="stylesheet" type="text/css" href="./resources/css/style-old.css">
+        <link rel="stylesheet" type="text/css" href="./resources/css/common.css">
+        <link rel="stylesheet" type="text/css" href="./resources/css/back-to-top.css">
         <link rel="stylesheet" type="text/css" href="./resources/css/products_page.css">
         
+        <!-- Scripts start here (poate ii parametrizez numele?) -->
     </head>
 
     <body>
@@ -23,34 +26,88 @@
         <main>
             <H1>Template-rendered Products Page</H1>
             <h2>Products</h2>
-            <div id = "products_filter" class = "products_filter">
-                Current date: 
-                <button id="show_date_button">Show date</button>
-                <p id="p1"></p>
-                <script src="./resources/scripts/js/products_filter.js">
-                    
-                </script>
-            </div>
-            <div id="products-grid" class="products-grid">
-                <ul class="product-list"">
-                    <% for (let product of locals.products) { %>
-                    <li class="product-listing">
-                        <figure class="product_image">
-                            <img src="<%- locals.product_image_path %>"/>
-                        </figure>
-                        <p class="product-name">
-                            <%- product.name %>
-                        </p>
-                        <p class="product-price">
-                            <%- product.price %> RON
-                        </p>
-                        <p class="add-to-cart">
-                            ADD TO CART
-                        </p>
-                    </li>
-                    <% } %>
-                </ul>
-            </div>
+            <script src="/resources/scripts/js/products-filter.js"></script>
+            <section id="filters">
+                <div id="products-filter">
+                    <% 
+                        var category_list = [];
+                        var prices = [];
+                            for (var product of locals.products) {
+                                prices.push(product['price']);
+                                if (!category_list.includes(product['category'])) {
+                                    category_list.push(product['category']);
+                                }
+                            }
+                        var max_price = Math.max(...prices);
+                    %>
+                    <label>Name: <input type="text" id="filter-name"></label>
+                    <div>Category: 
+                        <br>
+                        <% for (let category of category_list) { %>
+                            <label> <%- category %>
+                                <input name="gr_rad" value="<%- category %>" type="radio"/>
+                            </label>
+                            <br>
+                        <% } %>
+                        <label> all
+                            <input id="gr_rad" name="gr_rad" value="all_categories" type="radio"/>
+                        </label>
+                        <br>
+                    </div>
+
+                    <div>
+                        <label> Min price: <input type="range" id="input-price" value="0" min="0"  max="<%- max_price %>"> <span id="infoRange">(0)</span></label>
+                    </div>
+                    <div>
+                        <label>Description:
+                            <input type="checkbox" id="filter-description"/>
+                        </label>
+                    </div>
+                    <!-- <div>Price: 
+                        <label>$ (price &lt; 500)
+                            <input id="i_rad1" name="gr_rad" value="0:500" type="radio"/>
+                        </label>
+                        <br>
+                        <label>$$ (500 &le; price &lt; 1500)
+                            <input id="i_rad2" name="gr_rad" value="500:1500" type="radio"/>
+                        </label>
+                        <br>
+                        <label>$$$ (price &le; 1500)
+                            <input id="i_rad3" name="gr_rad" value="1500:_" type="radio"/>
+                        </label>
+                        <br>
+                        <label>All prices
+                            <input id="i_rad4" name="gr_rad" value="all" type="radio"/>
+                        </label>
+                        <br>
+                        <button id="filter_button">Filter</button> 
+                    </div> -->
+                    <button id="filter_button">Filter</button> 
+                    <button id="reset_filter_button">Reset Filter</button> 
+                </div>
+            </section>
+
+            <section id="products">
+                <div id="products-grid" class="products-grid">
+                    <ul class="product-list"">
+                        <% for (let product of locals.products) { %>
+                        <article class="product">
+                            <li class="product-listing">
+                                <figure class="product_image">
+                                    <img src="<%- locals.product_image_path %>/<%- product.name.toLowerCase() %>.jpeg"/>
+                                </figure>
+                                <p class="product-name"><%- product.name %></p>
+                                <p class="product-category" style="display: none"><%- product.category %></p>
+                                <p class="product-description"><%- product['description'] %></p>
+                                <button class="read-more">...more</button>
+                                <p class="product-price"><%- product.price %> RON</p>
+                                <p class="add-to-cart">ADD TO CART</p>
+                            </li>
+                        </article>
+                        <% } %>
+                    </ul>
+                </div>
+            </section>
         </main>
 
         <%- include("../elements/footer.ejs"); %>

@@ -10,11 +10,12 @@ $nrimag: 7 !default;
 }
 .gallery-a{
 	width:400px;
-	height:300px;
+	height:310px;
 	border:4px inset $server_set;
-	position:relative;
-	overflow:hidden;
-	margin-bottom:5rem;
+	position: relative;
+	overflow: hidden;
+	margin-bottom:2rem;
+	// justify-content: center;
 }
 .gallery-a figcaption{
 	position:absolute;

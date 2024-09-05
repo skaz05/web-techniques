@@ -1,0 +1,30 @@
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--button-bg-color);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-to-top::before {
+    content: "↑";
+    font-weight: bold;
+}
+
+.back-to-top:hover {
+    background-color: var(--button-hover-bg-color);
+    transform: scale(1.1);
+}
+
+.back-to-top.hidden {
+    display: none;
+}

@@ -1,4 +1,4 @@
-main {
+/* main {
     padding: 0px 0px 0px 5px;
     margin: 0px;
 }
@@ -18,14 +18,12 @@ ul.product-list li {
     list-style-type: none;
     width: auto;
     padding-top: 1px;
-    /* border: solid magenta 1px; */
     margin: 0;
 }
 
 .product_image {
     padding: 0;
     margin: 0;
-    /* border: black 1px solid; */
     width: 400px;
     height: 300px;
 }
@@ -57,15 +55,10 @@ p.add-to-cart {
     background-color: rgb(177, 23, 23);
     text-align: center;
     margin: auto;
-    /* border: black 1px solid; */
     width: 30%;
     height: 30px;
     line-height: 30px;
 }
-/* li.product-listing:hover {
-    border-radius: 25px;
-    transition: border-radius 0.5s linear;
-} */
 .product-listing {
     position: relative;
     overflow: hidden;
@@ -77,4 +70,204 @@ p.add-to-cart {
 }
 .product-listing:hover img {
     border-radius: 35px;
+}
+
+p[class]::after { 
+    content: " (" attr(class) ") ";
+}
+#dv {
+    border: 1px solid purple;
+    height: auto;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+main {
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* older version, shouldnt be using this anymore */
+/* ul.product-list {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    border: none; 
+    margin: 0 auto; 
+} */
+
+ul.product-list {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 90%;
+    max-width: 100%;
+    border: none;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+
+ul.product-list li {
+    list-style-type: none;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #D1C8E2;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* older version, i should not use this anymore */
+/* ul.product-list li {
+    list-style-type: none;
+    width: calc(33.333% - 20px); 
+    padding: 10px;
+    margin: 0;
+    background-color: #FFFFFF; 
+    border: 1px solid #D1C8E2; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
+
+ul.product-list li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product_image {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 300px; 
+    border-radius: 10px; 
+    overflow: hidden;
+}
+
+.product_image img {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover;
+}
+
+.product-listing:hover img {
+    transform: scale(1.05); 
+}
+
+p.product-name {
+    color: #333333;
+    font-weight: bold;
+    background-color: #D0BDF4;
+    text-align: center;
+    margin: 10px 0;
+    border: 1px solid #C4B7E1;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+p.product-price {
+    color: #333333;
+    font-weight: bold;
+    background-color: #D0BDF4;
+    text-align: center;
+    margin: 10px 0;
+    border: 1px solid #C4B7E1;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.product-description {
+    color: #666666; 
+    background-color: #F9F9F9; 
+    text-align: left;
+    margin: 10px 0; 
+    padding: 10px; 
+    border: 1px solid #E0E0E0; 
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-size: 0.9em; 
+    line-height: 1.4; 
+    position: relative;
+    overflow: hidden;
+}
+
+.description-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.read-more {
+    display: block;
+    background: none;
+    color: #007BFF; 
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.read-more.expanded {
+    display: none; 
+}
+.read-more:focus {
+    outline: none;
+}
+
+
+p.add-to-cart {
+    color: #FFFFFF;
+    font-weight: bold;
+    background-color: #A07DFF;
+    text-align: center;
+    margin: 10px auto;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 150px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box;
+}
+/* older version, should not use this anymore */
+/* p.add-to-cart {
+    color: #FFFFFF;
+    font-weight: bold;
+    background-color: #A07DFF;
+    text-align: center;
+    margin: 10px auto;
+    border: none;
+    border-radius: 5px;
+    width: 80%; 
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+} */
+
+p.add-to-cart:hover {
+    background-color: #8A5CFF;
+    transform: scale(1.05);
+}
+
+#dv {
+    border: 1px solid #A07DFF;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
 }

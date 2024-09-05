@@ -191,12 +191,12 @@ app.get("/*favicon.ico", function(request, response) {
 app.get("/products", function(request, response) {
     console.log("Request received on '" + request.url + "'!");
     // console.log(imgObj.images[0].description);
-    product_image_path = path.join(resourcesPath, "images", "product_image.jpg");
+    product_image_path = path.join(resourcesPath, "images", "products");
     client.query("SELECT * FROM products", function(err, queryResult){
         // console.log(queryResult.rows);
         products_list = queryResult.rows;
         // for (let product of products_list) {
-        //     console.log(`${product.name} - ${product.price}`);
+        //     console.log(`${product.name} - ${product.price} - ${product['description']}`);
         // }
         response.render("pages/products", {products: products_list, product_image_path: product_image_path});
     });

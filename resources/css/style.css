@@ -172,13 +172,15 @@ ul.menu li ul.submenu li ul.subsubmenu li:hover > a {
 } */
 
 body {
-    background-color: rgb(244, 232, 218);
+    /* background-color: rgb(244, 232, 218); */
+    background-color: #f2f2f2;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
 }
 
 header {
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
+    background-color: #D0BDF4;
     margin: 1px 0px 0px 0px;
     padding: 1px 5px 0px 15px;
     border-bottom: 1px solid black;
@@ -186,7 +188,8 @@ header {
 
 
 main {
-    background-color: rgb(250, 250, 250);
+    /* background-color: rgb(250, 250, 250); */
+    background-color: #F8F9FA;
     margin: 0px 0px 2px 0px;
     padding: 0px 5px 1px 20px;
     border-bottom: 1px solid black;
@@ -195,12 +198,29 @@ main {
 footer {
     /* margin: var(--margin-small); */
     padding: 1px 15px 1px 15px;
+    background-color: #E6E0F0;
 }
 
 p {
-    color: rebeccapurple;
+    /* color: rebeccapurple; */
+    color: #333333;
 }
-
+a {
+    color: #8A5CFF; 
+}
+a:hover {
+    color: #6A3BFF; 
+}
+.button {
+    background-color: #A07DFF; 
+    color: #FFFFFF; 
+}
+.button:hover {
+    background-color: #8A5CFF; 
+}
+.bordered-element {
+    border: 1px solid #D1C8E2;
+}
 #intro {
     display: grid;
     grid-template-columns: auto auto;
@@ -289,6 +309,7 @@ p {
     }
     ul.menu {
         display: none;
+        z-index: 1000;
         position: absolute;
         left: 0;
         width: 100%;
