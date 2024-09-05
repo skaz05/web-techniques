@@ -53,7 +53,11 @@ Pagini ale site-ului:
 
 [layout-responsive] grid-ul a fost facut pe pagina main index
 [stilizare-taburi] facut in side_page
-
+[stilizare-linkuri] facut in css comun ('common.css')
+[galerie-animata] facut cu efecte proprii
+[galerie-statica] (*) facut cu efecte proprii, fara grila 5x3 cu 2x2 si 4x2 alb
+[efect-css-reflexie-text] - incercat in main index page, dar n-a iesit asa bine
+[efect-css-stilizare-hr] facut pe pagina main sub tabel
 ------------
 // completari:
 + cap I - 
@@ -70,3 +74,7 @@ etapa 6
 etapa 2
 cerinte bootstrap
 model examen
+
+
+stilizare-tabel
+variante-meniu - scss

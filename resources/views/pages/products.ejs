@@ -38,14 +38,16 @@
                                     category_list.push(product['category']);
                                 }
                             }
+                            category_list.sort();
                         var max_price = Math.max(...prices);
+                        console.log(locals.requested_category)
                     %>
                     <label>Name: <input type="text" id="filter-name"></label>
                     <div>Category: 
                         <br>
                         <% for (let category of category_list) { %>
                             <label> <%- category %>
-                                <input name="gr_rad" value="<%- category %>" type="radio"/>
+                                <input name="gr_rad" value="<%- category %>" type="radio" />
                             </label>
                             <br>
                         <% } %>

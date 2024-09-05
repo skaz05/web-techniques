@@ -3,11 +3,33 @@
     --button-bg-color: #8A5CFF;
     --button-hover-bg-color: #fd88ff;
 }
+
+.fancy-hr {
+    position: relative;
+    border: none;
+    height: 15px;
+    background: linear-gradient(to right, transparent 0%, transparent 5%, #000 8%, #000 45%, transparent 47%, transparent 53%, #000 55%, #000 93%, transparent 95%, transparent 100%);
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.fancy-hr::before {
+    content: '*';
+    position: absolute;
+    /* top: -10px;  */
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 15px; /* Small space around the star */
+    font-size: 2em;
+    font-weight: bold;
+    color: #000;
+}
+
 a:visited:not(.menu a) {
     color: var(--visited-link-color);
 }
 a[href^="http"]:not(.menu a)::before {
-    /* content: " ¬"; */
     font-size: 1.5em;
     color: #8A5CFF; 
     transition: color 0.3s ease;

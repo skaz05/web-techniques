@@ -188,9 +188,21 @@ app.get("/*favicon.ico", function(request, response) {
     response.sendFile(faviconPath);
 });
 
-app.get("/products", function(request, response) {
+app.get("/products*", function(request, response) {
     console.log("Request received on '" + request.url + "'!");
     // console.log(imgObj.images[0].description);
+
+    // understand url request and grab category dar cu URLSearchParamsAPI
+    // pt asta tre sa fac full url...
+    function getCategoryFromUrl(url) {
+        const urlObj = new URL(url);
+        const params = new URLSearchParams(urlObj.search);
+        return params.get('category');
+    }
+
+    var fullUrl = request.protocol + '://' + request.get('host') + request.originalUrl;
+    let category = getCategoryFromUrl(fullUrl);
+
     product_image_path = path.join(resourcesPath, "images", "products");
     client.query("SELECT * FROM products", function(err, queryResult){
         // console.log(queryResult.rows);
@@ -230,6 +242,9 @@ app.get("*/animated_gallery.css", function(request, response) {
 
     response.setHeader('Content-Type', 'text/css');
     response.send(compileResult.css);
+
+    var scssFinalPath = path.join(tempPath, 'animated_gallery-final.scss');
+    fs.writeFileSync(scssFinalPath, compileResult.css);
     
     // custom function to create statistics for the colors :) maybe a graph and a distribution page on an admin panel?
     colorStatistic = colorStatistics(randomColor);

@@ -1,5 +1,5 @@
 .back-to-top {
-    position: fixed;
+    position: fixed !important;
     bottom: 20px;
     right: 20px;
     width: 40px;
@@ -16,7 +16,9 @@
 }
 
 .back-to-top::before {
+    position: fixed !important;
     content: "↑";
+    color: white !important;
     font-weight: bold;
 }
 
