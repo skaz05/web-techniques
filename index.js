@@ -210,7 +210,7 @@ app.get("/products*", function(request, response) {
         // for (let product of products_list) {
         //     console.log(`${product.name} - ${product.price} - ${product['description']}`);
         // }
-        response.render("pages/products", {products: products_list, product_image_path: product_image_path});
+        response.render("pages/products", {products: products_list, product_image_path: product_image_path, requested_category: category});
     });
     // response.end();
     // console.log("----------------------------------------------------------------")
